@@ -17,20 +17,10 @@ function myLineUp(event) {
 
     let playersValue = playersList.length > 0 ? playersList.join(", ") : "No players selected";
 
-    let finalSummary = "Status: " + statusValue + ", " + " | Date: " + dateValue + " | Players: " + playersValue;
+    let finalSummary = "Status: " + statusValue + " | Date: " + dateValue + " | Players: " + playersValue;
     
     console.log("Here is your lineup: ", finalSummary);
 
     let displayArea = document.getElementById("lineup-display");
     displayArea.textContent = finalSummary;
   }
-
-document.addEventListener('DOMContentLoaded', function() {
-    let submitButton = document.getElementById("submit");
-    if (submitButton){
-        submitButton.addEventListener('click', myLineUp);
-    }
-    else {
-        console.error("No element");
-    }
-});
