@@ -1,56 +1,36 @@
-// This is a simple JavaScript file that adds interactivity to the HTML page
-// It defines a function to show an alert when a link is clicked
-function sayHello() {
-    alert("Hello, world from javascript!");
-}
-// This function will be called when the link is clicked
-// It shows an alert with a message
-// Ensure the DOM is fully loaded before attaching the event listener
-document.addEventListener("DOMContentLoaded", function() {
-    const link = document.getElementById("hello-link");
-    if (!link) {
-        console.error("Link with ID 'hello-link' not found.");
-        return;
+//myLineUp prints all the data it receives to the console, concatenates it into one string
+//and displays the selections on the webpage
+
+function myLineUp(event) {
+    event.preventDefault()
+    let chosenStatus = document.querySelector('input[name="status"]:checked');
+    let statusValue = chosenStatus ? chosenStatus.value : "";
+
+    let chosenDate = document.querySelector('select[name="gameDate"]');
+    let dateValue = chosenDate ? chosenDate.value : "";
+
+    let chosenPlayers = document.querySelectorAll('#players input[type="checkbox"]:checked');
+    let playersList = [];
+    chosenPlayers.forEach(function(box) {
+        playersList.push(box.name);
+    });
+
+    let playersValue = playersList.length > 0 ? playersList.join(", ") : "No players selected";
+
+    let finalSummary = "Status: " + statusValue + ", " + " | Date: " + dateValue + " | Players: " + playersValue;
+    
+    console.log("Here is your lineup: ", finalSummary);
+
+    let displayArea = document.getElementById("lineup-display");
+    displayArea.textContent = finalSummary;
+  }
+
+document.addEventListener('DOMContentLoaded', function() {
+    let submitButton = document.getElementById("submit");
+    if (submitButton){
+        submitButton.addEventListener('click', myLineUp);
     }
-    link.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent the default link behavior
-        sayHello();
-    });
-});
-
-async function getRandomJoke() {
-    return fetch('https://icanhazdadjoke.com/', {
-        headers: {
-            'Accept': 'text/plain'
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text();
-    })
-    .catch(error => {
-        console.error('There was a problem fetching the joke:', error);
-        return "Failed to fetch a joke. Please try again later.";
-    });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const jokeButton = document.getElementById("joke-button");
-    if (!jokeButton) {
-        console.error("Button with ID 'joke-button' not found.");
-        return;
+    else {
+        console.error("No element");
     }
-    jokeButton.addEventListener("click", async function() {
-
-            const jokeDisplay = document.getElementById("joke-display");
-            if (!jokeDisplay) {
-                console.error("Element with ID 'joke-display' not found.");
-                return;
-            }
-            jokeDisplay.textContent = "Loading joke...";
-            const joke = await getRandomJoke();
-            jokeDisplay.textContent = joke;
-    });
 });

@@ -3,23 +3,82 @@
 
 <head>
   <meta charset="utf-8">
-  <title>CS208 - Starter Code (UPDATE ME)!</title>
+  <title>Starting Lineup</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>HTML Rocks!!</h1>
-  <ul>
-  <li><a href="/hello">Click here to say hello</a></li>
-  <li><button id="hello-link">Click Me!</button></li>
-  <li><button id="joke-button">Dad Joke!</button></li>
-  <script src="script.js"></script>
-  </ul>
-  <img src="funny.png" alt="Funny Image" width="300" height="200">
+  <h1>Starting Lineup</h1>
 
-  <h2 id="joke-display"></h2>
+  <p>
+    <fieldset id="status">
+      <legend>Status:</legend>
+        <input type="radio" name="status" value="Draft" id="draft">
+        <label for="draft">Draft</label>
+
+        <input type="radio" name="status" value="Final" id="final" checked>
+        <label for="final">Final</label>
+    </fieldset>
+  </p>
+
+  <p>
+    <label for="date">Date: </label>
+    <select name="gameDate">
+      <option value="March20">March20</option>
+      <option value="March24">March24</option>
+      <option value="April 2">April 2</option>
+      <option value="April 6">April 6</option>
+      <option value="April 13">April 13</option>
+    </select>
+  </p>
+
+  <p>
+    <fieldset id="players">
+      <legend>Players:</legend>
+        <p>
+          <input type="checkbox" name="aarav_agarwal" id="aarav_agarwal">
+          <label for="aarav_agarwal">Aarav Agarwal</label>
+        </p>
+        <p>
+          <input type="checkbox" name="ava_johnson" id="ava_johnson">
+          <label for="ava_johnson">Ava Johnson</label>
+        </p>
+        <p>
+          <input type="checkbox" name="julio_ortiz" id="julio_ortiz">
+          <label for="julio_ortiz">Julio Ortiz</label>
+        </p>
+        <p>
+          <input type="checkbox" name="liam_rubio" id="liam_rubio">
+          <label for="liam_rubio">Liam Rubio</label>
+        </p>
+        <p>
+          <input type="checkbox" name="emma_witherspoon" id="emma_witherspoon">
+          <label for="emma_witherspoon">Emma Witherspoon</label>
+        </p>
+    </fieldset>
+  </p>
+
+  <p>
+    <input type="button" value="Submit" id="submit"> 
+  </p>
+
+  <p>
+    <div id="lineup-display">Here is your lineup: </div>
+  </p>
+
+  <br>
+  <br>
+  <p>
+    Resources used:
+    <ol>
+      <li><a href="https://www.google.com/search?q=help+me+with+this+assignment+as+tutor&oq=help+me+with+this+assignment+as+tutor&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRigATIHCAYQIRifBdIBCDExMDhqMGo5qAIGsAIB8QV5XD7Sbsx8mw&sourceid=chrome&source=chrome.ob&ie=UTF-8">Google Gemini</a></li>
+      <li><a href="https://learn.zybooks.com/zybook/BOISESTATECS208PanterFall2026?lti_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3OTI4NzUyMzAsInVzZXJfaWQiOjI5MTk4MjB9.TFyF1WUk7Rsa2pot1600LnFmaGZIWWH_hRUUWzZjUSo">zyBook</a></li>
+    </ol>
+  </p>
+
+  <script src=""script.js"></script>
 </body>
 
 </html>
