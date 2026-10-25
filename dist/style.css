@@ -8,3 +8,10 @@ h1{
   text-align: left;
 }
 
+fieldset {
+  max-width: 400px;
+}
+
+#resources {
+  font-size: 9pt;
+}

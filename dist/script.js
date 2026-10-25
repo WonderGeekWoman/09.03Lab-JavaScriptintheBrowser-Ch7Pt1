@@ -17,10 +17,11 @@ function myLineUp(event) {
 
     let playersValue = playersList.length > 0 ? playersList.join(", ") : "No players selected";
 
-    let finalSummary = "Status: " + statusValue + " | Date: " + dateValue + " | Players: " + playersValue;
+    let finalSummary = "Status: " + statusValue + "\nDate: " + dateValue + "\nPlayers: " + playersValue;
     
-    console.log("Here is your lineup: ", finalSummary);
+    console.log("Here is your lineup:\n", finalSummary);
 
     let displayArea = document.getElementById("lineup-display");
-    displayArea.textContent = finalSummary;
+    displayArea.innerText = finalSummary;
   }
+
